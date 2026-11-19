@@ -4,7 +4,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 os.chdir(BASE)
 sys.path.insert(0, BASE)
 
-for f in glob.glob("Oo*.so") + glob.glob("Oo*.pyd"):
+for f in glob.glob("Got*.so") + glob.glob("Got*.pyd"):
     name = os.path.basename(f).split(".")[0]
     try:
         m = importlib.import_module(name)
@@ -13,5 +13,5 @@ for f in glob.glob("Oo*.so") + glob.glob("Oo*.pyd"):
     except ImportError:
         continue
 else:
-    print("Oo.so မရပါ — Python version/OS စစ်ပါ")
+    print("Got.so မရပါ — Python version/OS စစ်ပါ")
     sys.exit(1)
